@@ -1,0 +1,41 @@
+<OMPBox>
+    BoxLayout:
+        size: root.width , root.height
+        pos: 0 , root.height - 30
+        orientation:'horizontal'
+
+        Label:
+            size_hint: (.2, None)
+            height: 30
+            text: 'Medicine:'
+        TextInput:
+            size_hint: (.2, None)
+            height: 30
+            multiline: False
+        Label:
+            size_hint: (.2, None)
+            height: 30
+            text: 'Dosage:'
+        TextInput:
+            size_hint: (.2, None)
+            height: 30
+            multiline: False
+            hint_text: '   mg'
+        Label:
+            size_hint: (.2, None)
+            height: 30
+            text: 'Take it each...:'
+        TextInput:
+            size_hint: (.2, None)
+            height: 30
+            multiline: False
+            hint_text: '    hours'
+        Button:
+            size_hint: (.2, None)
+            height: 30
+            text: '+Add'
+    BoxLayout:
+        Label:
+            text: 
+    BoxLayout:
+
