@@ -1,16 +1,3 @@
-    # name = ObjectProperty(None)
-    # email = ObjectProperty(None)
-
-    # def press_btn(self):
-    #     name = self.var1.text
-    #     email = self.var2.text
-
-    #     print(f'User: {name} Email: {email}')
-
-    #     self.var1.text = ''
-    #     self.var2.text = ''
-
-
 import kivy
 from kivy.app import App
 from kivy.uix.label import Label
@@ -22,8 +9,33 @@ from kivy.properties import ObjectProperty
 
 
 class OMPBox(Widget):
-    def test(self):
-        return None
+    med = ObjectProperty(None)
+    dos = ObjectProperty(None)
+    clock = ObjectProperty(None)
+
+ # Get the data from widget above and create schedule 
+    def add_med(self):
+        self.OMPBox = OMPBox()
+        schedule = self.OMPBox.children[-1]
+        med_label = Label(text=self.med.text, font_size=15)
+        dos_label = Label(text=self.dos.text, font_size=15)
+        time_label = Label(text=self.clock.text, font_size=15)
+          # give this buttons an on press later
+        taked_btn = Button(text='taked!') 
+        del_btn = Button(text='delete')
+        meds_schedule = BoxLayout(spacing=100, pos=(self.width/2 -
+                                                      med_label.width+dos_label.width/2, self.height-120))
+        meds_schedule.add_widget(med_label)
+        meds_schedule.add_widget(dos_label)
+        meds_schedule.add_widget(time_label)
+        meds_schedule.add_widget(taked_btn)
+        meds_schedule.add_widget(del_btn)
+        
+        schedule.add_widget(meds_schedule)
+
+
+
+
 
 class OhMyPills(App):
     def build(self):

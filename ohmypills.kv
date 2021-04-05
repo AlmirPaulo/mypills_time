@@ -1,4 +1,8 @@
 <OMPBox>
+    med: med
+    dos: dos
+    clock: clock
+
     BoxLayout:
         size: root.width , root.height
         pos: 0 , root.height - 30
@@ -12,6 +16,7 @@
             size_hint: (.2, None)
             height: 30
             multiline: False
+            id: med
         Label:
             size_hint: (.2, None)
             height: 30
@@ -21,6 +26,7 @@
             height: 30
             multiline: False
             hint_text: '   mg'
+            id: dos
         Label:
             size_hint: (.2, None)
             height: 30
@@ -30,12 +36,23 @@
             height: 30
             multiline: False
             hint_text: '    hours'
+            id: clock
         Button:
             size_hint: (.2, None)
             height: 30
             text: '+Add'
+            on_press: root.add_med()
     BoxLayout:
+        size: root.width , root.height
+        pos: 0 , root.height - 60
+        orientation:'horizontal'
         Label:
-            text: 
+            size_hint: (.2, None)
+            height: 30
+            font_size: 30
+            text:'Insert your Medicines'
+            id: output
     BoxLayout:
-
+        size: root.width , root.height
+        pos: 0 , root.height - 120
+        orientation:'horizontal'
